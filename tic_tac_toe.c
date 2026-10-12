@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int n = 0, t = 0, x, y, win;
+    int n = 0, t = 0, x, y, endin;
     char c;
     char massiv[3][3];
     for (int i = 0; i < 3; i++) {
@@ -45,30 +45,30 @@ int main() {
         }
         massiv[x - 1][y - 1] = c;
 
-        win = 0;
+        endin = 0;
         for (int i = 0; i < 3; i++) {
             if (massiv[i][0] == c &&
                 massiv[i][1] == c &&
                 massiv[i][2] == c) {
-                win = 1;
+                endin = 1;
             }
             if (massiv[0][i] == c &&
                 massiv[1][i] == c &&
                 massiv[2][i] == c) {
-                win = 1;
+                endin = 1;
             }
         }
         if (massiv[0][0] == c &&
             massiv[1][1] == c &&
             massiv[2][2] == c) {
-            win = 1;
+            endin = 1;
         }
         if (massiv[0][2] == c &&
             massiv[1][1] == c &&
             massiv[2][0] == c) {
-            win = 1;
+            endin = 1;
         }
-        if (win == 1) {
+        if (endin == 1) {
             if (t % 2 == 1) {
                 n = 1;
             } else {
